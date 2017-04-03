@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"sendgrid",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "sendgrid",
+    "description": "api documentation for [sendgrid (v5.0.0)](https://sendgrid.com) [![npm package](https://img.shields.io/npm/v/npmdoc-sendgrid.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-sendgrid) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-sendgrid.svg)](https://travis-ci.org/npmdoc/node-npmdoc-sendgrid)",
     "devDependencies": {
-        "sendgrid": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "sendgrid": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-sendgrid",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-sendgrid",
+    "keywords": [
+        "documentation",
+        "sendgrid"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_sendgrid.js",
+    "name": "npmdoc-sendgrid",
+    "nameAlias": "npmdoc_sendgrid",
+    "nameOriginal": "npmdoc-sendgrid",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-sendgrid.git"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
