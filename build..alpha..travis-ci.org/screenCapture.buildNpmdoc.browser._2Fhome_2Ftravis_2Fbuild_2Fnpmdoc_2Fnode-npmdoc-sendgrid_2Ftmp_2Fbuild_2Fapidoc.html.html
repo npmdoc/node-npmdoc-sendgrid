@@ -1,0 +1,2078 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://sendgrid.com">sendgrid (v5.0.0)</a>
+</h1>
+<h4>Official SendGrid NodeJS library.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sendgrid">module sendgrid</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.Promise">
+            function <span class="apidocSignatureSpan">sendgrid.</span>Promise
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.importer">
+            function <span class="apidocSignatureSpan">sendgrid.</span>importer
+            <span class="apidocSignatureSpan">(sg, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.parse">
+            function <span class="apidocSignatureSpan">sendgrid.</span>parse
+            <span class="apidocSignatureSpan">(config, request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sendgrid.</span>importer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sendgrid.</span>mail</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sendgrid.</span>parse.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sendgrid.importer">module sendgrid.importer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.importer.importer">
+            function <span class="apidocSignatureSpan">sendgrid.</span>importer
+            <span class="apidocSignatureSpan">(sg, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.importer.super_">
+            function <span class="apidocSignatureSpan">sendgrid.importer.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sendgrid.importer.prototype">module sendgrid.importer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.importer.prototype._notify">
+            function <span class="apidocSignatureSpan">sendgrid.importer.prototype.</span>_notify
+            <span class="apidocSignatureSpan">(error, result, batch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.importer.prototype._sendBatch">
+            function <span class="apidocSignatureSpan">sendgrid.importer.prototype.</span>_sendBatch
+            <span class="apidocSignatureSpan">(context, data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.importer.prototype._worker">
+            function <span class="apidocSignatureSpan">sendgrid.importer.prototype.</span>_worker
+            <span class="apidocSignatureSpan">(task, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.importer.prototype.push">
+            function <span class="apidocSignatureSpan">sendgrid.importer.prototype.</span>push
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sendgrid.mail">module sendgrid.mail</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Asm">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Asm
+            <span class="apidocSignatureSpan">(group_id, groups_to_display)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Attachment">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Attachment
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Bcc">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Bcc
+            <span class="apidocSignatureSpan">(enable, email)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.BypassListManagement">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>BypassListManagement
+            <span class="apidocSignatureSpan">(enable)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Category">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Category
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.ClickTracking">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>ClickTracking
+            <span class="apidocSignatureSpan">(enable, enable_text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Content">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Content
+            <span class="apidocSignatureSpan">(type, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.CustomArgs">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>CustomArgs
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Email">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Email
+            <span class="apidocSignatureSpan">(email, name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Footer">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Footer
+            <span class="apidocSignatureSpan">(enable, text, html)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Ganalytics">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Ganalytics
+            <span class="apidocSignatureSpan">( enable, utm_source, utm_medium, utm_term, utm_content, utm_campaign )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Header">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Header
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Mail">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Mail
+            <span class="apidocSignatureSpan">(from_email, subject, to_email, content)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.MailSettings">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>MailSettings
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.OpenTracking">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>OpenTracking
+            <span class="apidocSignatureSpan">(enable, substitution_tag)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Personalization">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Personalization
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.SandBoxMode">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>SandBoxMode
+            <span class="apidocSignatureSpan">(enable)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Section">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Section
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.SpamCheck">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>SpamCheck
+            <span class="apidocSignatureSpan">(enable, threshold, post_to_url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.SubscriptionTracking">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>SubscriptionTracking
+            <span class="apidocSignatureSpan">(enable, text, html, substitution_tag)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.Substitution">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>Substitution
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.mail.TrackingSettings">
+            function <span class="apidocSignatureSpan">sendgrid.mail.</span>TrackingSettings
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sendgrid.parse">module sendgrid.parse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.parse.parse">
+            function <span class="apidocSignatureSpan">sendgrid.</span>parse
+            <span class="apidocSignatureSpan">(config, request)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sendgrid.parse.prototype">module sendgrid.parse.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.parse.prototype._getAttachments">
+            function <span class="apidocSignatureSpan">sendgrid.parse.prototype.</span>_getAttachments
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.parse.prototype._getAttachmentsRaw">
+            function <span class="apidocSignatureSpan">sendgrid.parse.prototype.</span>_getAttachmentsRaw
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.parse.prototype.attachments">
+            function <span class="apidocSignatureSpan">sendgrid.parse.prototype.</span>attachments
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.parse.prototype.getRawEmail">
+            function <span class="apidocSignatureSpan">sendgrid.parse.prototype.</span>getRawEmail
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.parse.prototype.hasRawEmail">
+            function <span class="apidocSignatureSpan">sendgrid.parse.prototype.</span>hasRawEmail
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sendgrid.parse.prototype.keyValues">
+            function <span class="apidocSignatureSpan">sendgrid.parse.prototype.</span>keyValues
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sendgrid" id="apidoc.module.sendgrid">module sendgrid</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.Promise" id="apidoc.element.sendgrid.Promise">
+        function <span class="apidocSignatureSpan">sendgrid.</span>Promise
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Promise() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.importer" id="apidoc.element.sendgrid.importer">
+        function <span class="apidocSignatureSpan">sendgrid.</span>importer
+        <span class="apidocSignatureSpan">(sg, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">importer = function (sg, options) {
+  options = options || {};
+  var self = this;
+  this.sg = sg;
+  this.pendingItems = [];
+
+  // Number of items to send per batch.
+  this.batchSize = options.batchSize || 1500;
+
+  // Max number of requests per rate limit period.
+  this.rateLimitLimit = options.rateLimitLimit || 3;
+
+  // Length of rate limit period (miliseconds).
+  this.rateLimitPeriod = options.rateLimitPeriod || 2000;
+
+  // Create a throttler that will process no more than `rateLimitLimit` requests every `rateLimitPeriod` ms.
+  this.throttle = new Bottleneck(0, 0);
+  this.throttle.changeReservoir(this.rateLimitLimit);
+
+  // Create a queue that wil be used to send batches to the throttler.
+  this.queue = queue(ensureAsync(this._worker));
+
+  // When the last batch is removed from the queue, add any incomplete batches.
+  this.queue.empty = function() {
+    if (self.pendingItems.length) {
+      debug('adding %s items from deferrd queue for processing', self.pendingItems.length);
+      var batch = self.pendingItems.splice(0);
+      self.queue.push({
+        data: batch,
+        owner: self,
+      }, function(error, result) {
+        if (error) {
+          return self._notify(error, JSON.parse(error.response.body), batch);
+        }
+        return self._notify(null, JSON.parse(result.body), batch);
+      });
+    }
+  };
+
+  // Emit an event when the queue is drained.
+  this.queue.drain = function() {
+    self.emit('drain');
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.parse" id="apidoc.element.sendgrid.parse">
+        function <span class="apidocSignatureSpan">sendgrid.</span>parse
+        <span class="apidocSignatureSpan">(config, request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parse(config, request) {
+  this.keys = config.keys;
+  this.request = request;
+  this.payload = request.body || {};
+  this.files = request.files || [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sendgrid.importer" id="apidoc.module.sendgrid.importer">module sendgrid.importer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.importer.importer" id="apidoc.element.sendgrid.importer.importer">
+        function <span class="apidocSignatureSpan">sendgrid.</span>importer
+        <span class="apidocSignatureSpan">(sg, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">importer = function (sg, options) {
+  options = options || {};
+  var self = this;
+  this.sg = sg;
+  this.pendingItems = [];
+
+  // Number of items to send per batch.
+  this.batchSize = options.batchSize || 1500;
+
+  // Max number of requests per rate limit period.
+  this.rateLimitLimit = options.rateLimitLimit || 3;
+
+  // Length of rate limit period (miliseconds).
+  this.rateLimitPeriod = options.rateLimitPeriod || 2000;
+
+  // Create a throttler that will process no more than `rateLimitLimit` requests every `rateLimitPeriod` ms.
+  this.throttle = new Bottleneck(0, 0);
+  this.throttle.changeReservoir(this.rateLimitLimit);
+
+  // Create a queue that wil be used to send batches to the throttler.
+  this.queue = queue(ensureAsync(this._worker));
+
+  // When the last batch is removed from the queue, add any incomplete batches.
+  this.queue.empty = function() {
+    if (self.pendingItems.length) {
+      debug('adding %s items from deferrd queue for processing', self.pendingItems.length);
+      var batch = self.pendingItems.splice(0);
+      self.queue.push({
+        data: batch,
+        owner: self,
+      }, function(error, result) {
+        if (error) {
+          return self._notify(error, JSON.parse(error.response.body), batch);
+        }
+        return self._notify(null, JSON.parse(result.body), batch);
+      });
+    }
+  };
+
+  // Emit an event when the queue is drained.
+  this.queue.drain = function() {
+    self.emit('drain');
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.importer.super_" id="apidoc.element.sendgrid.importer.super_">
+        function <span class="apidocSignatureSpan">sendgrid.importer.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sendgrid.importer.prototype" id="apidoc.module.sendgrid.importer.prototype">module sendgrid.importer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.importer.prototype._notify" id="apidoc.element.sendgrid.importer.prototype._notify">
+        function <span class="apidocSignatureSpan">sendgrid.importer.prototype.</span>_notify
+        <span class="apidocSignatureSpan">(error, result, batch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_notify = function (error, result, batch) {
+  if (error) {
+    return this.emit('error', error, batch);
+  }
+  return this.emit('success', result, batch);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.importer.prototype._sendBatch" id="apidoc.element.sendgrid.importer.prototype._sendBatch">
+        function <span class="apidocSignatureSpan">sendgrid.importer.prototype.</span>_sendBatch
+        <span class="apidocSignatureSpan">(context, data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_sendBatch = function (context, data, callback) {
+  debug('sending batch (%s items)', data.length);
+
+  var request = context.sg.emptyRequest();
+  request.method = 'POST';
+  request.path = '/v3/contactdb/recipients';
+  request.body = data;
+
+  context.sg.API(request)
+    .then(function(response) {
+      debug('got response: %o', response);
+      setTimeout(function() {
+        context.throttle.incrementReservoir(1);
+      }, context.rateLimitPeriod);
+      return callback(null, response);
+    })
+    .catch(function(error) {
+      debug('got error, %o', error);
+      setTimeout(function() {
+        context.throttle.incrementReservoir(1);
+      }, context.rateLimitPeriod);
+      return callback(error);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.importer.prototype._worker" id="apidoc.element.sendgrid.importer.prototype._worker">
+        function <span class="apidocSignatureSpan">sendgrid.importer.prototype.</span>_worker
+        <span class="apidocSignatureSpan">(task, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_worker = function (task, callback) {
+  var context = task.owner;
+  debug('processing batch (%s items)', task.data.length);
+  context.throttle.submit(context._sendBatch, context, task.data, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.importer.prototype.push" id="apidoc.element.sendgrid.importer.prototype.push">
+        function <span class="apidocSignatureSpan">sendgrid.importer.prototype.</span>push
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">push = function (data) {
+  var self = this;
+  data = Array.isArray(data) ? data : [data];
+
+  // Add the new items onto the pending items.
+  var itemsToProcess = this.pendingItems.concat(data);
+
+  // Chunk the pending items into batches and add onto the queue
+  var batches = chunk(itemsToProcess, this.batchSize);
+  debug('generated batches %s from %s items', batches.length, data.length);
+
+  batches.forEach(function(batch) {
+    // If this batch is full or the queue is empty queue it for processing.
+    if (batch.length === self.batchSize || !self.queue.length()) {
+      self.queue.push({
+        data: batch,
+        owner: self,
+      }, function(error, result) {
+        if (error) {
+          return self._notify(error, JSON.parse(error.response.body), batch);
+        }
+        return self._notify(null, JSON.parse(result.body), batch);
+      });
+    }
+    // Otherwise, it store it for later.
+    else {
+      debug('the last batch with only %s item is deferred (partial batch)', batch.length);
+      self.pendingItems = batch;
+    }
+  });
+
+  debug('batches in queue: %s', this.queue.length());
+  debug('items in deferred queue: %s', this.pendingItems.length);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sendgrid.mail" id="apidoc.module.sendgrid.mail">module sendgrid.mail</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Asm" id="apidoc.element.sendgrid.mail.Asm">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Asm
+        <span class="apidocSignatureSpan">(group_id, groups_to_display)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Asm(group_id, groups_to_display) {
+  this.group_id = group_id;
+  this.groups_to_display = groups_to_display;
+
+  var json = {
+    group_id: this.group_id,
+    groups_to_display: this.groups_to_display,
+  };
+
+  return json;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Attachment" id="apidoc.element.sendgrid.mail.Attachment">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Attachment
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Attachment() {
+  this.content = undefined;
+  this.type = undefined;
+  this.filename = undefined;
+  this.disposition = undefined;
+  this.content_id = undefined;
+
+  this.setContent = function(content) {
+    this.content = content;
+  };
+
+  this.getContent = function() {
+    return this.content;
+  };
+
+  this.setType = function(type) {
+    this.type = type;
+  };
+
+  this.getType = function() {
+    return this.type;
+  };
+
+  this.setFilename = function(filename) {
+    this.filename = filename;
+  };
+
+  this.getFilename = function() {
+    return this.filename;
+  };
+
+  this.setDisposition = function(disposition) {
+    this.disposition = disposition;
+  };
+
+  this.getDisposition = function() {
+    return this.disposition;
+  };
+
+  this.setContentId = function(content_id) {
+    this.content_id = content_id;
+  };
+
+  this.getContentId = function() {
+    return this.content_id;
+  };
+
+  this.toJSON = function() {
+    var json = {
+      content: this.getContent(),
+      type: this.getType(),
+      filename: this.getFilename(),
+      disposition: this.getDisposition(),
+      content_id: this.getContentId(),
+    };
+    return json;
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Bcc" id="apidoc.element.sendgrid.mail.Bcc">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Bcc
+        <span class="apidocSignatureSpan">(enable, email)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Bcc(enable, email) {
+  this.enable = enable;
+  this.email = email;
+
+  this.setEnable = function(enable) {
+    this.enable = enable;
+  };
+
+  this.getEnable = function() {
+    return this.enable;
+  };
+
+  this.setEmail = function(email) {
+    this.email = email;
+  };
+
+  this.getEmail = function() {
+    return this.email;
+  };
+
+  this.toJSON = function() {
+    var json = {
+      enable: this.getEnable(),
+      email: this.getEmail(),
+    };
+    return json;
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.BypassListManagement" id="apidoc.element.sendgrid.mail.BypassListManagement">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>BypassListManagement
+        <span class="apidocSignatureSpan">(enable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BypassListManagement(enable) {
+  this.enable = enable;
+
+  var json = {
+    enable: this.enable,
+  };
+
+  return json;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Category" id="apidoc.element.sendgrid.mail.Category">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Category
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Category(name) {
+  this.category = name;
+
+  var json = {
+    category: this.category,
+  };
+
+  return json;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.ClickTracking" id="apidoc.element.sendgrid.mail.ClickTracking">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>ClickTracking
+        <span class="apidocSignatureSpan">(enable, enable_text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ClickTracking(enable, enable_text) {
+  this.enable = enable;
+  this.enable_text = enable_text;
+
+  this.setEnable = function(enable) {
+    this.enable = enable;
+  };
+
+  this.getEnable = function() {
+    return this.enable;
+  };
+
+  this.setEnableText = function(enable_text) {
+    this.enable_text = enable_text;
+  };
+
+  this.getEnableText = function() {
+    return this.enable_text;
+  };
+
+  this.toJSON = function() {
+    var json = {
+      enable: this.getEnable(),
+      enable_text: this.getEnableText(),
+    };
+    return json;
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Content" id="apidoc.element.sendgrid.mail.Content">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Content
+        <span class="apidocSignatureSpan">(type, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Content(type, value) {
+  this.type = type;
+  this.value = value;
+
+  var json = {
+    type: this.type,
+    value: this.value,
+  };
+
+  return json;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### With Mail Helper Class
+
+```javascript
+var helper = require('sendgrid').mail;
+var from_email = new helper.Email('test@example.com');
+var to_email = new helper.Email('test@example.com');
+var subject = 'Hello World from the SendGrid Node.js Library!';
+var content = new helper.<span class="apidocCodeKeywordSpan">Content</span>('text/plain', 'Hello, Email!');
+var mail = new helper.Mail(from_email, subject, to_email, content);
+
+var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+var request = sg.emptyRequest({
+method: 'POST',
+path: '/v3/mail/send',
+body: mail.toJSON(),
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.CustomArgs" id="apidoc.element.sendgrid.mail.CustomArgs">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>CustomArgs
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CustomArgs(key, value) {
+  this.key = key;
+  this.value = value;
+
+  var json = {};
+  json[this.key] = this.value;
+
+  return json;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Email" id="apidoc.element.sendgrid.mail.Email">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Email
+        <span class="apidocSignatureSpan">(email, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Email(email, name) {
+  this.name = name;
+  this.email = email;
+
+  var json = {
+    email: this.email,
+    name: this.name,
+  };
+
+  return json;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The following is the minimum needed code to send an email with the [/mail/send Helper](https://github.com/sendgrid/sendgrid-nodejs
+/tree/master/lib/helpers/mail) ([here](https://github.com/sendgrid/sendgrid-nodejs/blob/master/examples/helpers/mail/example.js#
+L15) is a full example):
+
+### With Mail Helper Class
+
+```javascript
+var helper = require('sendgrid').mail;
+var from_email = new helper.<span class="apidocCodeKeywordSpan">Email</span>('test@example.com');
+var to_email = new helper.Email('test@example.com');
+var subject = 'Hello World from the SendGrid Node.js Library!';
+var content = new helper.Content('text/plain', 'Hello, Email!');
+var mail = new helper.Mail(from_email, subject, to_email, content);
+
+var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+var request = sg.emptyRequest({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Footer" id="apidoc.element.sendgrid.mail.Footer">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Footer
+        <span class="apidocSignatureSpan">(enable, text, html)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Footer(enable, text, html) {
+  this.enable = enable;
+  this.text = text;
+  this.html = html;
+
+  this.setEnable = function(enable) {
+    this.enable = enable;
+  };
+
+  this.getEnable = function() {
+    return this.enable;
+  };
+
+  this.setText = function(text) {
+    this.text = text;
+  };
+
+  this.getText = function() {
+    return this.text;
+  };
+
+  this.setHtml = function(html) {
+    this.html = html;
+  };
+
+  this.getHtml = function() {
+    return this.html;
+  };
+
+  this.toJSON = function() {
+    var json = {
+      enable: this.getEnable(),
+      text: this.getText(),
+      html: this.getHtml(),
+    };
+    return json;
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Ganalytics" id="apidoc.element.sendgrid.mail.Ganalytics">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Ganalytics
+        <span class="apidocSignatureSpan">( enable, utm_source, utm_medium, utm_term, utm_content, utm_campaign )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Ganalytics( enable, utm_source, utm_medium, utm_term, utm_content, utm_campaign ) {
+  this.enable = enable;
+  this.utm_source = utm_source;
+  this.utm_medium = utm_medium;
+  this.utm_term = utm_term;
+  this.utm_content = utm_content;
+  this.utm_campaign = utm_campaign;
+
+  this.setEnable = function(enable) {
+    this.enable = enable;
+  };
+
+  this.getEnable = function() {
+    return this.enable;
+  };
+
+  this.setUtmSource = function(utm_source) {
+    this.utm_source = utm_source;
+  };
+
+  this.getUtmSource = function() {
+    return this.utm_source;
+  };
+
+  this.setUtmMedium = function(utm_medium) {
+    this.utm_medium = utm_medium;
+  };
+
+  this.getUtmMedium = function() {
+    return this.utm_medium;
+  };
+
+  this.setUtmTerm = function(utm_term) {
+    this.utm_term = utm_term;
+  };
+
+  this.getUtmTerm = function() {
+    return this.utm_term;
+  };
+
+  this.setUtmContent = function(utm_content) {
+    this.utm_content = utm_content;
+  };
+
+  this.getUtmContent = function() {
+    return this.utm_content;
+  };
+
+  this.setUtmCampaign = function(utm_campaign) {
+    this.utm_campaign = utm_campaign;
+  };
+
+  this.getUtmCampaign = function() {
+    return this.utm_campaign;
+  };
+
+  this.toJSON = function() {
+    var json = {
+      enable: this.getEnable(),
+      utm_source: this.getUtmSource(),
+      utm_medium: this.getUtmMedium(),
+      utm_term: this.getUtmTerm(),
+      utm_content: this.getUtmContent(),
+      utm_campaign: this.getUtmCampaign(),
+    };
+    return json;
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Header" id="apidoc.element.sendgrid.mail.Header">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Header
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Header(key, value) {
+  this.key = key;
+  this.value = value;
+
+  var json = {};
+  json[this.key] = this.value;
+
+  return json;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Mail" id="apidoc.element.sendgrid.mail.Mail">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Mail
+        <span class="apidocSignatureSpan">(from_email, subject, to_email, content)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Mail(from_email, subject, to_email, content) {
+  this.from_email = undefined;
+  this.personalizations = undefined;
+  this.subject = undefined;
+  this.contents = undefined;
+  this.attachments = undefined;
+  this.template_id = undefined;
+  this.sections = undefined;
+  this.headers = undefined;
+  this.categories = undefined;
+  this.send_at = undefined;
+  this.batch_id = undefined;
+  this.asm = undefined;
+  this.ip_pool_name = undefined;
+  this.mail_settings = undefined;
+  this.reply_to = undefined;
+
+  this.setFrom = function(email) {
+    this.from_email = email;
+  };
+
+  this.getFrom = function() {
+    return this.from_email;
+  };
+
+  this.addPersonalization = function(personalization) {
+    if (this.personalizations === undefined) {
+      this.personalizations = [];
+    }
+    this.personalizations.push(personalization);
+  };
+
+  this.getPersonalizations = function() {
+    return this.personalizations;
+  };
+
+  this.setSubject = function(subject) {
+    this.subject = subject;
+  };
+
+  this.getSubject = function() {
+    return this.subject;
+  };
+
+  this.addContent = function(content) {
+    if (this.contents === undefined) {
+      this.contents = [];
+    }
+    this.contents.push(content);
+  };
+
+  this.getContents = function() {
+    return this.contents;
+  };
+
+  this.addAttachment = function(attachment) {
+    if (this.attachments === undefined) {
+      this.attachments = [];
+    }
+    this.attachments.push(attachment);
+  };
+
+  this.getAttachments = function() {
+    return this.attachments;
+  };
+
+  this.setTemplateId = function(template_id) {
+    this.template_id = template_id;
+  };
+
+  this.getTemplateId = function() {
+    return this.template_id;
+  };
+
+  this.addSection = function(section) {
+    if (this.sections === undefined) {
+      this.sections = {};
+    }
+    this.sections[Object.keys(section)[0]] = section[Object.keys(section)[0]];
+  };
+
+  this.getSections = function() {
+    return this.sections;
+  };
+
+  this.addHeader = function(header) {
+    if (this.headers === undefined) {
+      this.headers = {};
+    }
+    this.headers[Object.keys(header)[0]] = header[Object.keys(header)[0]];
+  };
+
+  this.getHeaders = function() {
+    return this.headers;
+  };
+
+  this.addCategory = function(category) {
+    if (this.categories === undefined) {
+      this.categories = [];
+    }
+    this.categories.push(category.category);
+  };
+
+  this.getCategories = function() {
+    return this.categories;
+  };
+
+  this.addCustomArg = function(custom_arg) {
+    if (this.custom_args === undefined) {
+      this.custom_args = {};
+    }
+    this.custom_args[Object.keys(custom_arg)[0]] =
+      custom_arg[Object.keys(custom_arg)[0]];
+  };
+
+  this.getCustomArgs = function() {
+    return this.custom_args;
+  };
+
+  this.setSendAt = function(send_at) {
+    this.send_at = send_at;
+  };
+
+  this.getSendAt = function() {
+    return this.send_at;
+  };
+
+  this.setBatchId = function(batch_id) {
+    this.batch_id = batch_id;
+  };
+
+  this.getBatchId = function() {
+    return this.batch_id;
+  };
+
+  this.setAsm = function(asm) {
+    this.asm = asm;
+  };
+
+  this.getAsm = function() {
+    return this.asm;
+  };
+
+  this.setIpPoolName = function(ip_pool_name) {
+    this.ip_pool_name = ip_pool_name;
+  };
+
+  this.getIpPoolName = function() {
+    return this.ip_pool_name;
+  };
+
+  this.addMailSettings = function(mail_settings) {
+    this.mail_settings = mail_settings;
+  };
+
+  this.getMailSettings = function() {
+    return this.mail_settings;
+  };
+
+  this.addTrackingSettings = function(tracking_settings) {
+    this.tracking_settings = tracking_settings;
+  };
+
+  this.getTrackingSettings = function() {
+    return this.tracking_settings;
+  };
+
+  this.setReplyTo = function(reply_to) {
+    this.reply_to = reply_to;
+  };
+
+  this.getReplyTo = function() {
+    return this.reply_to;
+  };
+
+  if (from_email &amp;&amp; subject &amp;&amp; to_email &amp;&amp; content) {
+    this.setFrom(from_email);
+    var personalization = new Personalization();
+    personalization.addTo(to_email);
+    this.addPersonalization(personalization);
+    this.setSubject(subject);
+    this.addContent(content);
+  }
+
+  this.toJSON = functi ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var helper = require('sendgrid').mail;
+var from_email = new helper.Email('test@example.com');
+var to_email = new helper.Email('test@example.com');
+var subject = 'Hello World from the SendGrid Node.js Library!';
+var content = new helper.Content('text/plain', 'Hello, Email!');
+var mail = new helper.<span class="apidocCodeKeywordSpan">Mail</span>(from_email, subject, to_email, content);
+
+var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+var request = sg.emptyRequest({
+  method: 'POST',
+  path: '/v3/mail/send',
+  body: mail.toJSON(),
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.MailSettings" id="apidoc.element.sendgrid.mail.MailSettings">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>MailSettings
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MailSettings() {
+  this.bcc = undefined;
+  this.bypass_list_management = undefined;
+  this.footer = undefined;
+  this.sandbox_mode = undefined;
+  this.spam_check = undefined;
+
+  this.setBcc = function(bcc) {
+    this.bcc = bcc;
+  };
+
+  this.getBcc = function() {
+    return this.bcc;
+  };
+
+  this.setBypassListManagement = function(bypass_list_management) {
+    this.bypass_list_management = bypass_list_management;
+  };
+
+  this.getBypassListManagement = function() {
+    return this.bypass_list_management;
+  };
+
+  this.setFooter = function(footer) {
+    this.footer = footer;
+  };
+
+  this.getFooter = function() {
+    return this.footer;
+  };
+
+  this.setSandBoxMode = function(sandbox_mode) {
+    this.sandbox_mode = sandbox_mode;
+  };
+
+  this.getSandBoxMode = function() {
+    return this.sandbox_mode;
+  };
+
+  this.setSpamCheck = function(spam_check) {
+    this.spam_check = spam_check;
+  };
+
+  this.getSpamCheck = function() {
+    return this.spam_check;
+  };
+
+  this.toJSON = function() {
+    var json = {
+      bcc: this.getBcc(),
+      bypass_list_management: this.getBypassListManagement(),
+      footer: this.getFooter(),
+      sandbox_mode: this.getSandBoxMode(),
+      spam_check: this.getSpamCheck(),
+    };
+    return json;
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.OpenTracking" id="apidoc.element.sendgrid.mail.OpenTracking">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>OpenTracking
+        <span class="apidocSignatureSpan">(enable, substitution_tag)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function OpenTracking(enable, substitution_tag) {
+  this.enable = enable;
+  this.substitution_tag = substitution_tag;
+
+  this.setEnable = function(enable) {
+    this.enable = enable;
+  };
+
+  this.getEnable = function() {
+    return this.enable;
+  };
+
+  this.setSubscriptionTag = function(substitution_tag) {
+    this.substitution_tag = substitution_tag;
+  };
+
+  this.getSubscriptionTag = function() {
+    return this.substitution_tag;
+  };
+
+  this.toJSON = function() {
+    var json = {
+      enable: this.getEnable(),
+      substitution_tag: this.getSubscriptionTag(),
+    };
+    return json;
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Personalization" id="apidoc.element.sendgrid.mail.Personalization">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Personalization
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Personalization() {
+  this.tos = undefined;
+  this.ccs = undefined;
+  this.bccs = undefined;
+  this.subject = undefined;
+  this.headers = undefined;
+  this.substitutions = undefined;
+  this.custom_args = undefined;
+  this.send_at = undefined;
+
+  this.addTo = function(email) {
+    if (this.tos === undefined) {
+      this.tos = [];
+    }
+    this.tos.push(email);
+  };
+
+  this.getTos = function() {
+    return this.tos;
+  };
+
+  this.addCc = function(email) {
+    if (this.ccs === undefined) {
+      this.ccs = [];
+    }
+    this.ccs.push(email);
+  };
+
+  this.getCcs = function() {
+    return this.ccs;
+  };
+
+  this.addBcc = function(email) {
+    if (this.bccs === undefined) {
+      this.bccs = [];
+    }
+    this.bccs.push(email);
+  };
+
+  this.getBccs = function() {
+    return this.bccs;
+  };
+
+  this.setSubject = function(subject) {
+    this.subject = subject;
+  };
+
+  this.getSubject = function() {
+    return this.subject;
+  };
+
+  this.addHeader = function(header) {
+    if (this.headers === undefined) {
+      this.headers = {};
+    }
+    this.headers[Object.keys(header)[0]] = header[Object.keys(header)[0]];
+  };
+
+  this.getHeaders = function() {
+    return this.headers;
+  };
+
+  this.addSubstitution = function(substitution) {
+    if (this.substitutions === undefined) {
+      this.substitutions = {};
+    }
+    this.substitutions[Object.keys(substitution)[0]] =
+      substitution[Object.keys(substitution)[0]];
+  };
+
+  this.getSubstitutions = function() {
+    return this.substitutions;
+  };
+
+  this.addCustomArg = function(custom_arg) {
+    if (this.custom_args === undefined) {
+      this.custom_args = {};
+    }
+    this.custom_args[Object.keys(custom_arg)[0]] =
+      custom_arg[Object.keys(custom_arg)[0]];
+  };
+
+  this.getCustomArgs = function() {
+    return this.custom_args;
+  };
+
+  this.setSendAt = function(send_at) {
+    this.send_at = send_at;
+  };
+
+  this.getSendAt = function() {
+    return this.send_at;
+  };
+
+  this.toJSON = function() {
+    var json = {
+      to: this.getTos(),
+      cc: this.getCcs(),
+      bcc: this.getBccs(),
+      subject: this.getSubject(),
+      headers: this.getHeaders(),
+      substitutions: this.getSubstitutions(),
+      custom_args: this.getCustomArgs(),
+      send_at: this.getSendAt(),
+    };
+    return json;
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.SandBoxMode" id="apidoc.element.sendgrid.mail.SandBoxMode">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>SandBoxMode
+        <span class="apidocSignatureSpan">(enable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SandBoxMode(enable) {
+  this.enable = enable;
+
+  var json = {
+    enable: this.enable,
+  };
+
+  return json;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Section" id="apidoc.element.sendgrid.mail.Section">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Section
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Section(key, value) {
+  this.key = key;
+  this.value = value;
+
+  var json = {};
+  json[this.key] = this.value;
+
+  return json;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.SpamCheck" id="apidoc.element.sendgrid.mail.SpamCheck">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>SpamCheck
+        <span class="apidocSignatureSpan">(enable, threshold, post_to_url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SpamCheck(enable, threshold, post_to_url) {
+  this.enable = enable;
+  this.threshold = threshold;
+  this.post_to_url = post_to_url;
+
+  this.setEnable = function(enable) {
+    this.enable = enable;
+  };
+
+  this.getEnable = function() {
+    return this.enable;
+  };
+
+  this.setThreshold = function(threshold) {
+    this.threshold = threshold;
+  };
+
+  this.getThreshold = function() {
+    return this.threshold;
+  };
+
+  this.setPostToUrl = function(post_to_url) {
+    this.post_to_url = post_to_url;
+  };
+
+  this.getPostToUrl = function() {
+    return this.post_to_url;
+  };
+
+  this.toJSON = function() {
+    var json = {
+      enable: this.getEnable(),
+      threshold: this.getThreshold(),
+      post_to_url: this.getPostToUrl(),
+    };
+    return json;
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.SubscriptionTracking" id="apidoc.element.sendgrid.mail.SubscriptionTracking">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>SubscriptionTracking
+        <span class="apidocSignatureSpan">(enable, text, html, substitution_tag)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SubscriptionTracking(enable, text, html, substitution_tag) {
+  this.enable = enable;
+  this.text = text;
+  this.html = html;
+  this.substitution_tag = substitution_tag;
+
+  this.setEnable = function(enable) {
+    this.enable = enable;
+  };
+
+  this.getEnable = function() {
+    return this.enable;
+  };
+
+  this.setText = function(text) {
+    this.text = text;
+  };
+
+  this.getText = function() {
+    return this.text;
+  };
+
+  this.setHtml = function(html) {
+    this.html = html;
+  };
+
+  this.getHtml = function() {
+    return this.html;
+  };
+
+  this.setSubstitutionTag = function(substitution_tag) {
+    this.substitution_tag = substitution_tag;
+  };
+
+  this.getSubstitutionTag = function() {
+    return this.substitution_tag;
+  };
+
+  this.toJSON = function() {
+    var json = {
+      enable: this.getEnable(),
+      text: this.getText(),
+      html: this.getHtml(),
+      substitution_tag: this.getSubstitutionTag(),
+    };
+    return json;
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.Substitution" id="apidoc.element.sendgrid.mail.Substitution">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>Substitution
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Substitution(key, value) {
+  this.key = key;
+  this.value = value;
+
+  var json = {};
+  json[this.key] = this.value;
+
+  return json;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.mail.TrackingSettings" id="apidoc.element.sendgrid.mail.TrackingSettings">
+        function <span class="apidocSignatureSpan">sendgrid.mail.</span>TrackingSettings
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TrackingSettings() {
+  this.click_tracking = undefined;
+  this.open_tracking = undefined;
+  this.subscription_tracking = undefined;
+  this.ganalytics = undefined;
+
+  this.setClickTracking = function(click_tracking) {
+    this.click_tracking = click_tracking;
+  };
+
+  this.getClickTracking = function() {
+    return this.click_tracking;
+  };
+
+  this.setOpenTracking = function(open_tracking) {
+    this.open_tracking = open_tracking;
+  };
+
+  this.getOpenTracking = function() {
+    return this.open_tracking;
+  };
+
+  this.setSubscriptionTracking = function(subscription_tracking) {
+    this.subscription_tracking = subscription_tracking;
+  };
+
+  this.getSubscriptionTracking = function() {
+    return this.subscription_tracking;
+  };
+
+  this.setGanalytics = function(ganalytics) {
+    this.ganalytics = ganalytics;
+  };
+
+  this.getGanalytics = function() {
+    return this.ganalytics;
+  };
+
+  this.toJSON = function() {
+    var json = {
+      click_tracking: this.getClickTracking(),
+      open_tracking: this.getOpenTracking(),
+      subscription_tracking: this.getSubscriptionTracking(),
+      ganalytics: this.getGanalytics(),
+    };
+    return json;
+  };
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sendgrid.parse" id="apidoc.module.sendgrid.parse">module sendgrid.parse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.parse.parse" id="apidoc.element.sendgrid.parse.parse">
+        function <span class="apidocSignatureSpan">sendgrid.</span>parse
+        <span class="apidocSignatureSpan">(config, request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parse(config, request) {
+  this.keys = config.keys;
+  this.request = request;
+  this.payload = request.body || {};
+  this.files = request.files || [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sendgrid.parse.prototype" id="apidoc.module.sendgrid.parse.prototype">module sendgrid.parse.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.parse.prototype._getAttachments" id="apidoc.element.sendgrid.parse.prototype._getAttachments">
+        function <span class="apidocSignatureSpan">sendgrid.parse.prototype.</span>_getAttachments
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getAttachments = function (callback) {
+  var file;
+  var attachments = [];
+
+  for (var index in this.files) {
+    file = this.files[index];
+
+    if (fs.existsSync(file.path)) {
+      file.content = fs.readFileSync(file.path);
+      attachments.push(createAttachment(file));
+    }
+  }
+
+  return callback(attachments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.parse.prototype._getAttachmentsRaw" id="apidoc.element.sendgrid.parse.prototype._getAttachmentsRaw">
+        function <span class="apidocSignatureSpan">sendgrid.parse.prototype.</span>_getAttachmentsRaw
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getAttachmentsRaw = function (callback) {
+  this.getRawEmail(function(parsedEmail) {
+    if (!parsedEmail || !parsedEmail.attachments) {
+      return callback([]);
+    }
+
+    var attachments = parsedEmail.attachments.map(function(file) {
+      return createAttachment(file);
+    });
+
+    callback(attachments);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.parse.prototype.attachments" id="apidoc.element.sendgrid.parse.prototype.attachments">
+        function <span class="apidocSignatureSpan">sendgrid.parse.prototype.</span>attachments
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attachments = function (callback) {
+  if (this.hasRawEmail()) {
+    return this._getAttachmentsRaw(callback);
+  }
+
+  this._getAttachments(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.parse.prototype.getRawEmail" id="apidoc.element.sendgrid.parse.prototype.getRawEmail">
+        function <span class="apidocSignatureSpan">sendgrid.parse.prototype.</span>getRawEmail
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRawEmail = function (callback) {
+  var mailparser = new MailParser();
+  var rawEmail = this.payload.email;
+
+  if (!rawEmail) {
+    return callback(null);
+  }
+
+  mailparser.on('end', callback);
+
+  mailparser.write(rawEmail);
+  mailparser.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.parse.prototype.hasRawEmail" id="apidoc.element.sendgrid.parse.prototype.hasRawEmail">
+        function <span class="apidocSignatureSpan">sendgrid.parse.prototype.</span>hasRawEmail
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hasRawEmail = function () {
+  return Boolean(this.payload.email);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sendgrid.parse.prototype.keyValues" id="apidoc.element.sendgrid.parse.prototype.keyValues">
+        function <span class="apidocSignatureSpan">sendgrid.parse.prototype.</span>keyValues
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">keyValues = function () {
+  var keyValues = {};
+  var key;
+
+  for (var index in this.keys) {
+    key = this.keys[index];
+
+    if (this.payload[key]) {
+      keyValues[key] = this.payload[key];
+    }
+  }
+
+  return keyValues;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
