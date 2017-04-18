@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://sendgrid.com"
-
-    >sendgrid (v5.0.0)</a>
+    <a href="https://sendgrid.com">sendgrid (v5.0.0)</a>
 </h1>
 <h4>Official SendGrid NodeJS library.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.sendgrid">module sendgrid</a><ol>
 
@@ -1257,7 +1250,7 @@
   // When the last batch is removed from the queue, add any incomplete batches.
   this.queue.empty = function() {
     if (self.pendingItems.length) {
-      debug(&#x27;adding %s items from deferrd queue for processing&#x27;, self.pendingItems.length);
+      debug('adding %s items from deferrd queue for processing', self.pendingItems.length);
       var batch = self.pendingItems.splice(0);
       self.queue.push({
         data: batch,
@@ -1273,7 +1266,7 @@
 
   // Emit an event when the queue is drained.
   this.queue.drain = function() {
-    self.emit(&#x27;drain&#x27;);
+    self.emit('drain');
   };
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1290,9 +1283,9 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">importer.prototype._notify = function (error, result, batch) {
   if (error) {
-    return this.emit(&#x27;error&#x27;, error, batch);
+    return this.emit('error', error, batch);
   }
-  return this.emit(&#x27;success&#x27;, result, batch);
+  return this.emit('success', result, batch);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1307,23 +1300,23 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">importer.prototype._sendBatch = function (context, data, callback) {
-  debug(&#x27;sending batch (%s items)&#x27;, data.length);
+  debug('sending batch (%s items)', data.length);
 
   var request = context.sg.emptyRequest();
-  request.method = &#x27;POST&#x27;;
-  request.path = &#x27;/v3/contactdb/recipients&#x27;;
+  request.method = 'POST';
+  request.path = '/v3/contactdb/recipients';
   request.body = data;
 
   context.sg.API(request)
     .then(function(response) {
-      debug(&#x27;got response: %o&#x27;, response);
+      debug('got response: %o', response);
       setTimeout(function() {
         context.throttle.incrementReservoir(1);
       }, context.rateLimitPeriod);
       return callback(null, response);
     })
     .catch(function(error) {
-      debug(&#x27;got error, %o&#x27;, error);
+      debug('got error, %o', error);
       setTimeout(function() {
         context.throttle.incrementReservoir(1);
       }, context.rateLimitPeriod);
@@ -1344,7 +1337,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">importer.prototype._worker = function (task, callback) {
   var context = task.owner;
-  debug(&#x27;processing batch (%s items)&#x27;, task.data.length);
+  debug('processing batch (%s items)', task.data.length);
   context.throttle.submit(context._sendBatch, context, task.data, callback);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1368,7 +1361,7 @@
 
   // Chunk the pending items into batches and add onto the queue
   var batches = chunk(itemsToProcess, this.batchSize);
-  debug(&#x27;generated batches %s from %s items&#x27;, batches.length, data.length);
+  debug('generated batches %s from %s items', batches.length, data.length);
 
   batches.forEach(function(batch) {
     // If this batch is full or the queue is empty queue it for processing.
@@ -1385,13 +1378,13 @@
     }
     // Otherwise, it store it for later.
     else {
-      debug(&#x27;the last batch with only %s item is deferred (partial batch)&#x27;, batch.length);
+      debug('the last batch with only %s item is deferred (partial batch)', batch.length);
       self.pendingItems = batch;
     }
   });
 
-  debug(&#x27;batches in queue: %s&#x27;, this.queue.length());
-  debug(&#x27;items in deferred queue: %s&#x27;, this.pendingItems.length);
+  debug('batches in queue: %s', this.queue.length());
+  debug('items in deferred queue: %s', this.pendingItems.length);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2023,7 +2016,7 @@
     return this.reply_to;
   };
 
-  if (from_email &#x26;&#x26; subject &#x26;&#x26; to_email &#x26;&#x26; content) {
+  if (from_email &amp;&amp; subject &amp;&amp; to_email &amp;&amp; content) {
     this.setFrom(from_email);
     var personalization = new Personalization();
     personalization.addTo(to_email);
@@ -2617,7 +2610,7 @@
     return callback(null);
   }
 
-  mailparser.on(&#x27;end&#x27;, callback);
+  mailparser.on('end', callback);
 
   mailparser.write(rawEmail);
   mailparser.end();
@@ -2744,7 +2737,7 @@
   // When the last batch is removed from the queue, add any incomplete batches.
   this.queue.empty = function() {
     if (self.pendingItems.length) {
-      debug(&#x27;adding %s items from deferrd queue for processing&#x27;, self.pendingItems.length);
+      debug('adding %s items from deferrd queue for processing', self.pendingItems.length);
       var batch = self.pendingItems.splice(0);
       self.queue.push({
         data: batch,
@@ -2760,7 +2753,7 @@
 
   // Emit an event when the queue is drained.
   this.queue.drain = function() {
-    self.emit(&#x27;drain&#x27;);
+    self.emit('drain');
   };
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2797,9 +2790,9 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_notify = function (error, result, batch) {
   if (error) {
-    return this.emit(&#x27;error&#x27;, error, batch);
+    return this.emit('error', error, batch);
   }
-  return this.emit(&#x27;success&#x27;, result, batch);
+  return this.emit('success', result, batch);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2814,23 +2807,23 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_sendBatch = function (context, data, callback) {
-  debug(&#x27;sending batch (%s items)&#x27;, data.length);
+  debug('sending batch (%s items)', data.length);
 
   var request = context.sg.emptyRequest();
-  request.method = &#x27;POST&#x27;;
-  request.path = &#x27;/v3/contactdb/recipients&#x27;;
+  request.method = 'POST';
+  request.path = '/v3/contactdb/recipients';
   request.body = data;
 
   context.sg.API(request)
     .then(function(response) {
-      debug(&#x27;got response: %o&#x27;, response);
+      debug('got response: %o', response);
       setTimeout(function() {
         context.throttle.incrementReservoir(1);
       }, context.rateLimitPeriod);
       return callback(null, response);
     })
     .catch(function(error) {
-      debug(&#x27;got error, %o&#x27;, error);
+      debug('got error, %o', error);
       setTimeout(function() {
         context.throttle.incrementReservoir(1);
       }, context.rateLimitPeriod);
@@ -2851,7 +2844,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_worker = function (task, callback) {
   var context = task.owner;
-  debug(&#x27;processing batch (%s items)&#x27;, task.data.length);
+  debug('processing batch (%s items)', task.data.length);
   context.throttle.submit(context._sendBatch, context, task.data, callback);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2875,7 +2868,7 @@
 
   // Chunk the pending items into batches and add onto the queue
   var batches = chunk(itemsToProcess, this.batchSize);
-  debug(&#x27;generated batches %s from %s items&#x27;, batches.length, data.length);
+  debug('generated batches %s from %s items', batches.length, data.length);
 
   batches.forEach(function(batch) {
     // If this batch is full or the queue is empty queue it for processing.
@@ -2892,13 +2885,13 @@
     }
     // Otherwise, it store it for later.
     else {
-      debug(&#x27;the last batch with only %s item is deferred (partial batch)&#x27;, batch.length);
+      debug('the last batch with only %s item is deferred (partial batch)', batch.length);
       self.pendingItems = batch;
     }
   });
 
-  debug(&#x27;batches in queue: %s&#x27;, this.queue.length());
-  debug(&#x27;items in deferred queue: %s&#x27;, this.pendingItems.length);
+  debug('batches in queue: %s', this.queue.length());
+  debug('items in deferred queue: %s', this.pendingItems.length);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2919,9 +2912,9 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_notify = function (error, result, batch) {
   if (error) {
-    return this.emit(&#x27;error&#x27;, error, batch);
+    return this.emit('error', error, batch);
   }
-  return this.emit(&#x27;success&#x27;, result, batch);
+  return this.emit('success', result, batch);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2941,23 +2934,23 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_sendBatch = function (context, data, callback) {
-  debug(&#x27;sending batch (%s items)&#x27;, data.length);
+  debug('sending batch (%s items)', data.length);
 
   var request = context.sg.emptyRequest();
-  request.method = &#x27;POST&#x27;;
-  request.path = &#x27;/v3/contactdb/recipients&#x27;;
+  request.method = 'POST';
+  request.path = '/v3/contactdb/recipients';
   request.body = data;
 
   context.sg.API(request)
     .then(function(response) {
-      debug(&#x27;got response: %o&#x27;, response);
+      debug('got response: %o', response);
       setTimeout(function() {
         context.throttle.incrementReservoir(1);
       }, context.rateLimitPeriod);
       return callback(null, response);
     })
     .catch(function(error) {
-      debug(&#x27;got error, %o&#x27;, error);
+      debug('got error, %o', error);
       setTimeout(function() {
         context.throttle.incrementReservoir(1);
       }, context.rateLimitPeriod);
@@ -2983,7 +2976,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_worker = function (task, callback) {
   var context = task.owner;
-  debug(&#x27;processing batch (%s items)&#x27;, task.data.length);
+  debug('processing batch (%s items)', task.data.length);
   context.throttle.submit(context._sendBatch, context, task.data, callback);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -3012,7 +3005,7 @@
 
   // Chunk the pending items into batches and add onto the queue
   var batches = chunk(itemsToProcess, this.batchSize);
-  debug(&#x27;generated batches %s from %s items&#x27;, batches.length, data.length);
+  debug('generated batches %s from %s items', batches.length, data.length);
 
   batches.forEach(function(batch) {
     // If this batch is full or the queue is empty queue it for processing.
@@ -3029,13 +3022,13 @@
     }
     // Otherwise, it store it for later.
     else {
-      debug(&#x27;the last batch with only %s item is deferred (partial batch)&#x27;, batch.length);
+      debug('the last batch with only %s item is deferred (partial batch)', batch.length);
       self.pendingItems = batch;
     }
   });
 
-  debug(&#x27;batches in queue: %s&#x27;, this.queue.length());
-  debug(&#x27;items in deferred queue: %s&#x27;, this.pendingItems.length);
+  debug('batches in queue: %s', this.queue.length());
+  debug('items in deferred queue: %s', this.pendingItems.length);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3290,17 +3283,17 @@
 ### With Mail Helper Class
 
 ```javascript
-var helper = require(&#x27;sendgrid&#x27;).mail;
-var from_email = new helper.Email(&#x27;test@example.com&#x27;);
-var to_email = new helper.Email(&#x27;test@example.com&#x27;);
-var subject = &#x27;Hello World from the SendGrid Node.js Library!&#x27;;
-var content = new helper.<span class="apidocCodeKeywordSpan">Content</span>(&#x27;text/plain&#x27;, &#x27;Hello, Email!&#x27;);
+var helper = require('sendgrid').mail;
+var from_email = new helper.Email('test@example.com');
+var to_email = new helper.Email('test@example.com');
+var subject = 'Hello World from the SendGrid Node.js Library!';
+var content = new helper.<span class="apidocCodeKeywordSpan">Content</span>('text/plain', 'Hello, Email!');
 var mail = new helper.Mail(from_email, subject, to_email, content);
 
-var sg = require(&#x27;sendgrid&#x27;)(process.env.SENDGRID_API_KEY);
+var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 var request = sg.emptyRequest({
-method: &#x27;POST&#x27;,
-path: &#x27;/v3/mail/send&#x27;,
+method: 'POST',
+path: '/v3/mail/send',
 body: mail.toJSON(),
 ...</pre></li>
     </ul>
@@ -3355,14 +3348,14 @@ L15) is a full example):
 ### With Mail Helper Class
 
 ```javascript
-var helper = require(&#x27;sendgrid&#x27;).mail;
-var from_email = new helper.<span class="apidocCodeKeywordSpan">Email</span>(&#x27;test@example.com&#x27;);
-var to_email = new helper.Email(&#x27;test@example.com&#x27;);
-var subject = &#x27;Hello World from the SendGrid Node.js Library!&#x27;;
-var content = new helper.Content(&#x27;text/plain&#x27;, &#x27;Hello, Email!&#x27;);
+var helper = require('sendgrid').mail;
+var from_email = new helper.<span class="apidocCodeKeywordSpan">Email</span>('test@example.com');
+var to_email = new helper.Email('test@example.com');
+var subject = 'Hello World from the SendGrid Node.js Library!';
+var content = new helper.Content('text/plain', 'Hello, Email!');
 var mail = new helper.Mail(from_email, subject, to_email, content);
 
-var sg = require(&#x27;sendgrid&#x27;)(process.env.SENDGRID_API_KEY);
+var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 var request = sg.emptyRequest({
 ...</pre></li>
     </ul>
@@ -3706,7 +3699,7 @@ var request = sg.emptyRequest({
     return this.reply_to;
   };
 
-  if (from_email &#x26;&#x26; subject &#x26;&#x26; to_email &#x26;&#x26; content) {
+  if (from_email &amp;&amp; subject &amp;&amp; to_email &amp;&amp; content) {
     this.setFrom(from_email);
     var personalization = new Personalization();
     personalization.addTo(to_email);
@@ -3719,17 +3712,17 @@ var request = sg.emptyRequest({
     <li>example usage<pre class="apidocCodePre">...
 
 ```javascript
-var helper = require(&#x27;sendgrid&#x27;).mail;
-var from_email = new helper.Email(&#x27;test@example.com&#x27;);
-var to_email = new helper.Email(&#x27;test@example.com&#x27;);
-var subject = &#x27;Hello World from the SendGrid Node.js Library!&#x27;;
-var content = new helper.Content(&#x27;text/plain&#x27;, &#x27;Hello, Email!&#x27;);
+var helper = require('sendgrid').mail;
+var from_email = new helper.Email('test@example.com');
+var to_email = new helper.Email('test@example.com');
+var subject = 'Hello World from the SendGrid Node.js Library!';
+var content = new helper.Content('text/plain', 'Hello, Email!');
 var mail = new helper.<span class="apidocCodeKeywordSpan">Mail</span>(from_email, subject, to_email, content);
 
-var sg = require(&#x27;sendgrid&#x27;)(process.env.SENDGRID_API_KEY);
+var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 var request = sg.emptyRequest({
-  method: &#x27;POST&#x27;,
-  path: &#x27;/v3/mail/send&#x27;,
+  method: 'POST',
+  path: '/v3/mail/send',
   body: mail.toJSON(),
 });
 ...</pre></li>
@@ -4490,17 +4483,17 @@ var request = sg.emptyRequest({
 ### With Mail Helper Class
 
 ```javascript
-var helper = require(&#x27;sendgrid&#x27;).mail;
-var from_email = new helper.Email(&#x27;test@example.com&#x27;);
-var to_email = new helper.Email(&#x27;test@example.com&#x27;);
-var subject = &#x27;Hello World from the SendGrid Node.js Library!&#x27;;
-var content = new helper.<span class="apidocCodeKeywordSpan">Content</span>(&#x27;text/plain&#x27;, &#x27;Hello, Email!&#x27;);
+var helper = require('sendgrid').mail;
+var from_email = new helper.Email('test@example.com');
+var to_email = new helper.Email('test@example.com');
+var subject = 'Hello World from the SendGrid Node.js Library!';
+var content = new helper.<span class="apidocCodeKeywordSpan">Content</span>('text/plain', 'Hello, Email!');
 var mail = new helper.Mail(from_email, subject, to_email, content);
 
-var sg = require(&#x27;sendgrid&#x27;)(process.env.SENDGRID_API_KEY);
+var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 var request = sg.emptyRequest({
-method: &#x27;POST&#x27;,
-path: &#x27;/v3/mail/send&#x27;,
+method: 'POST',
+path: '/v3/mail/send',
 body: mail.toJSON(),
 ...</pre></li>
     </ul>
@@ -4565,14 +4558,14 @@ L15) is a full example):
 ### With Mail Helper Class
 
 ```javascript
-var helper = require(&#x27;sendgrid&#x27;).mail;
-var from_email = new helper.<span class="apidocCodeKeywordSpan">Email</span>(&#x27;test@example.com&#x27;);
-var to_email = new helper.Email(&#x27;test@example.com&#x27;);
-var subject = &#x27;Hello World from the SendGrid Node.js Library!&#x27;;
-var content = new helper.Content(&#x27;text/plain&#x27;, &#x27;Hello, Email!&#x27;);
+var helper = require('sendgrid').mail;
+var from_email = new helper.<span class="apidocCodeKeywordSpan">Email</span>('test@example.com');
+var to_email = new helper.Email('test@example.com');
+var subject = 'Hello World from the SendGrid Node.js Library!';
+var content = new helper.Content('text/plain', 'Hello, Email!');
 var mail = new helper.Mail(from_email, subject, to_email, content);
 
-var sg = require(&#x27;sendgrid&#x27;)(process.env.SENDGRID_API_KEY);
+var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 var request = sg.emptyRequest({
 ...</pre></li>
     </ul>
@@ -4936,7 +4929,7 @@ var request = sg.emptyRequest({
     return this.reply_to;
   };
 
-  if (from_email &#x26;&#x26; subject &#x26;&#x26; to_email &#x26;&#x26; content) {
+  if (from_email &amp;&amp; subject &amp;&amp; to_email &amp;&amp; content) {
     this.setFrom(from_email);
     var personalization = new Personalization();
     personalization.addTo(to_email);
@@ -4949,17 +4942,17 @@ var request = sg.emptyRequest({
     <li>example usage<pre class="apidocCodePre">...
 
 ```javascript
-var helper = require(&#x27;sendgrid&#x27;).mail;
-var from_email = new helper.Email(&#x27;test@example.com&#x27;);
-var to_email = new helper.Email(&#x27;test@example.com&#x27;);
-var subject = &#x27;Hello World from the SendGrid Node.js Library!&#x27;;
-var content = new helper.Content(&#x27;text/plain&#x27;, &#x27;Hello, Email!&#x27;);
+var helper = require('sendgrid').mail;
+var from_email = new helper.Email('test@example.com');
+var to_email = new helper.Email('test@example.com');
+var subject = 'Hello World from the SendGrid Node.js Library!';
+var content = new helper.Content('text/plain', 'Hello, Email!');
 var mail = new helper.<span class="apidocCodeKeywordSpan">Mail</span>(from_email, subject, to_email, content);
 
-var sg = require(&#x27;sendgrid&#x27;)(process.env.SENDGRID_API_KEY);
+var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 var request = sg.emptyRequest({
-  method: &#x27;POST&#x27;,
-  path: &#x27;/v3/mail/send&#x27;,
+  method: 'POST',
+  path: '/v3/mail/send',
   body: mail.toJSON(),
 });
 ...</pre></li>
@@ -5601,7 +5594,7 @@ var request = sg.emptyRequest({
     return callback(null);
   }
 
-  mailparser.on(&#x27;end&#x27;, callback);
+  mailparser.on('end', callback);
 
   mailparser.write(rawEmail);
   mailparser.end();
@@ -5758,7 +5751,7 @@ var request = sg.emptyRequest({
     return callback(null);
   }
 
-  mailparser.on(&#x27;end&#x27;, callback);
+  mailparser.on('end', callback);
 
   mailparser.write(rawEmail);
   mailparser.end();
@@ -5844,3 +5837,4 @@ var request = sg.emptyRequest({
     ]
 </div>
 </div>
+</body></html>
